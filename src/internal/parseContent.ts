@@ -1,5 +1,5 @@
 import { Content } from "../types";
-import yaml from "yaml";
+import * as yaml from "yaml";
 
 export const parseContent = (
   rawContent: string,
