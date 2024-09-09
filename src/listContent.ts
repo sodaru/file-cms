@@ -1,7 +1,7 @@
 import path from "path";
 import { Config } from "./Config";
 import { listDirCached } from "./internal/listDirCached";
-import { AnyExpression, Content, ListContent, StringExpression } from "./types";
+import { AnyExpression, Content, ListContent } from "./types";
 import { fetchContentCached } from "./internal/fetchContentCached";
 import { attributeFilter } from "./internal/attributeFilter";
 
@@ -11,12 +11,16 @@ export const listContent: ListContent = async (
 ) => {
   const rootDir = Config.getRootDir();
 
+  const { type: typeFilter, slug: slugFilter, ...contentFilters } = filters;
+
   // Level 1, identify the files to fetch
   const filesToFetch: { type: string; slug: string }[] = [];
 
   const allTypes = await listDirCached(rootDir);
-  const typeFilter = getStringFilterPredicate(filters.type);
-  const typesToFetch = typeFilter ? allTypes.filter(typeFilter) : allTypes;
+  const typeFilterPredicate = expressionToProvider(typeFilter);
+  const typesToFetch = typeFilter
+    ? allTypes.filter(typeFilterPredicate)
+    : allTypes;
 
   await Promise.all(
     typesToFetch.map(async type => {
@@ -24,8 +28,10 @@ export const listContent: ListContent = async (
       const allSlugs = allSlugFileNames
         .filter(slug => slug.endsWith(".md"))
         .map(slug => slug.substring(0, slug.length - 3));
-      const slugFilter = getStringFilterPredicate(filters.slug);
-      const slugsToFetch = slugFilter ? allSlugs.filter(slugFilter) : allSlugs;
+      const slugFilterPredicate = expressionToProvider(slugFilter);
+      const slugsToFetch = slugFilter
+        ? allSlugs.filter(slugFilterPredicate)
+        : allSlugs;
 
       for (const slug in slugsToFetch) {
         filesToFetch.push({ type, slug });
@@ -40,10 +46,7 @@ export const listContent: ListContent = async (
     })
   );
 
-  const contentPredicate = getContentFilterPredicate(
-    filters.meta,
-    filters.content
-  );
+  const contentPredicate = getContentFilterPredicate(contentFilters);
 
   const filteredContents = contentPredicate
     ? allContents.filter(contentPredicate)
@@ -57,55 +60,40 @@ export const listContent: ListContent = async (
   return partialContents;
 };
 
-const getStringFilterPredicate = (stringExpr?: StringExpression) => {
-  let predicate: (data: string) => boolean;
-  if (stringExpr) {
-    const filterExpr = sanitizeStringFilterExpressions(stringExpr);
-    const filterExprName = Object.keys(filterExpr)[0];
-    const provider = Config.getFilterProvider(filterExprName);
-    predicate = data => {
-      return provider(data, filterExpr[filterExprName]);
-    };
-  }
-  return predicate;
-};
+const getContentFilterPredicate = (filters?: Record<string, AnyExpression>) => {
+  const filterKeys = Object.keys(filters);
 
-const getContentFilterPredicate = (
-  metaExpressions?: Record<string, AnyExpression>,
-  contentExpression?: StringExpression
-) => {
-  let predicate: (content: Content) => boolean;
-  const expressions = { ...(metaExpressions || {}) };
-  if (contentExpression) {
-    expressions.content = sanitizeStringFilterExpressions(contentExpression);
-  }
-  if (Object.keys(expressions).length > 0) {
-    const providers: ((content: Content) => boolean)[] = [];
-    for (const key in expressions) {
-      const filterExpr = expressions[key];
-      const filterExprName = Object.keys(filterExpr)[0];
-      const provider = Config.getFilterProvider(filterExprName);
-      providers.push(content => {
-        return provider(content[key], filterExpr[filterExprName]);
-      });
-    }
-    predicate = data => {
-      for (const provider of providers) {
-        if (!provider(data)) {
+  if (filterKeys.length > 0) {
+    const providers: Record<string, (data: unknown) => boolean> = {};
+    filterKeys.forEach(key => {
+      providers[key] = expressionToProvider(filters[key]);
+    });
+
+    return (content: Content) => {
+      for (const key in filterKeys) {
+        const provider = providers[key];
+        if (!provider(content[key])) {
           return false;
         }
       }
       return true;
     };
   }
-  return predicate;
 };
 
-const sanitizeStringFilterExpressions = (
-  expr: StringExpression
-): Exclude<StringExpression, string> => {
-  if (typeof expr == "string") {
-    return { eq: expr };
-  }
-  return expr;
+const expressionToProvider = (expression: AnyExpression) => {
+  const fullExpression =
+    expression === null ||
+    typeof expression == "string" ||
+    typeof expression == "number" ||
+    typeof expression == "boolean"
+      ? { eq: expression }
+      : expression;
+
+  const exprName = Object.keys(fullExpression)[0];
+  const exprArg = Object.values(fullExpression)[0];
+  const provider = Config.getFilterProvider(exprName);
+  return (data: unknown) => {
+    return provider(data, exprArg);
+  };
 };

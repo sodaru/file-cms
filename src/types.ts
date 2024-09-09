@@ -42,6 +42,10 @@ export type SlugExpression = StringExpression;
 export type ContentExpression = StringExpression;
 
 export type AnyExpression =
+  | string
+  | number
+  | boolean
+  | null
   | GeneralExpression
   | EqExpression
   | StartsWithExpression
@@ -58,9 +62,8 @@ export type ListContent = (
   filters?: {
     type?: TypeExpression;
     slug?: SlugExpression;
-    meta?: Record<string, AnyExpression>;
     content?: ContentExpression;
-  },
+  } & Record<string, AnyExpression>,
   attributes?: AttributeFilter,
   customFilterProviders?: Record<string, FilterProvider>
 ) => Promise<Partial<Content>[]>;
