@@ -13,7 +13,11 @@ export const EndsWithFilterProvider: FilterProvider = (data, arg) => {
 };
 
 export const ContainsFilterProvider: FilterProvider = (data, arg) => {
-  return typeof data == "string" && data.includes(arg as string);
+  console.log(data, arg);
+  return (
+    typeof data == "string" &&
+    data.toLocaleLowerCase().includes((arg + "").toLocaleLowerCase())
+  );
 };
 
 export const GtFilterProvider: FilterProvider = (data, arg) => {

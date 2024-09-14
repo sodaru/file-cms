@@ -33,7 +33,7 @@ export const listContent: ListContent = async (
         ? allSlugs.filter(slugFilterPredicate)
         : allSlugs;
 
-      for (const slug in slugsToFetch) {
+      for (const slug of slugsToFetch) {
         filesToFetch.push({ type, slug });
       }
     })
@@ -70,9 +70,9 @@ const getContentFilterPredicate = (filters?: Record<string, AnyExpression>) => {
     });
 
     return (content: Content) => {
-      for (const key in filterKeys) {
+      for (const key of filterKeys) {
         const provider = providers[key];
-        if (!provider(content[key])) {
+        if (!(provider && provider(content[key]))) {
           return false;
         }
       }
@@ -82,6 +82,9 @@ const getContentFilterPredicate = (filters?: Record<string, AnyExpression>) => {
 };
 
 const expressionToProvider = (expression: AnyExpression) => {
+  if (expression === undefined) {
+    return;
+  }
   const fullExpression =
     expression === null ||
     typeof expression == "string" ||
