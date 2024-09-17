@@ -1,71 +1,71 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`listContent Tests Check listing all content without filters 1`] = `
-Array [
-  Object {
+[
+  {
     "author": "Alice Smith",
     "content": "# JavaScript Closures
 
 Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
     "date": "2024-08-12",
     "slug": "blog-1",
-    "tags": Array [
+    "tags": [
       "JavaScript",
       "Programming",
     ],
     "title": "Understanding JavaScript Closures",
     "type": "blog",
   },
-  Object {
+  {
     "author": "John Doe",
     "content": "# AI in Healthcare
 
 Artificial intelligence is transforming the healthcare industry by improving diagnosis, treatment, and patient care.",
     "date": "2024-08-18",
     "slug": "blog-2",
-    "tags": Array [
+    "tags": [
       "AI",
       "Healthcare",
     ],
     "title": "The Future of AI in Healthcare",
     "type": "blog",
   },
-  Object {
+  {
     "author": "Jane Doe",
     "content": "# Mastering CSS
 
 CSS is a crucial part of web development, and improving your skills can significantly enhance your front-end development.",
     "date": "2024-09-01",
     "slug": "blog-3",
-    "tags": Array [
+    "tags": [
       "CSS",
       "Web Development",
     ],
     "title": "How to Improve Your CSS Skills",
     "type": "blog",
   },
-  Object {
+  {
     "content": "# Python for Data Science
 
 Python is the go-to programming language for data science due to its simplicity and the vast array of libraries available.",
     "slug": "blog-4",
     "type": "blog",
   },
-  Object {
+  {
     "author": "Sarah Brown",
     "content": "# Productivity Tips
 
 This content includes special characters: @#$%^&().",
     "date": "2024-09-05",
     "slug": "blog-5",
-    "tags": Array [
+    "tags": [
       "Productivity",
       "Developers",
     ],
     "title": "Special @#$% Characters!",
     "type": "blog",
   },
-  Object {
+  {
     "category": "Electronics",
     "content": "# SuperFast Laptop
 
@@ -73,7 +73,7 @@ A high-performance laptop designed for professionals who need speed and reliabil
     "price": "$999",
     "releaseDate": "2024-07-10",
     "slug": "product-1",
-    "tags": Array [
+    "tags": [
       "laptop",
       "electronics",
       "featured",
@@ -81,7 +81,7 @@ A high-performance laptop designed for professionals who need speed and reliabil
     "title": "SuperFast Laptop",
     "type": "product",
   },
-  Object {
+  {
     "category": "Accessories",
     "content": "# Eco-Friendly Water Bottle
 
@@ -89,14 +89,14 @@ Stay hydrated with this eco-friendly, reusable water bottle, perfect for on-the-
     "price": "$25",
     "releaseDate": "2024-06-15",
     "slug": "product-2",
-    "tags": Array [
+    "tags": [
       "water bottle",
       "eco-friendly",
     ],
     "title": "Eco-Friendly Water Bottle",
     "type": "product",
   },
-  Object {
+  {
     "category": "Audio",
     "content": "# Noise-Canceling Headphones
 
@@ -104,14 +104,14 @@ Experience immersive sound with our noise-canceling headphones, ideal for music 
     "price": "$199",
     "releaseDate": "2024-08-01",
     "slug": "product-3",
-    "tags": Array [
+    "tags": [
       "headphones",
       "audio",
     ],
     "title": "Noise-Canceling Headphones",
     "type": "product",
   },
-  Object {
+  {
     "category": "Home Security",
     "content": "# Smart Home Security
 
@@ -119,14 +119,14 @@ Secure your home with our easy-to-install smart security system, controlled via 
     "price": "$299",
     "releaseDate": "2024-09-01",
     "slug": "product-4",
-    "tags": Array [
+    "tags": [
       "home security",
       "smart home",
     ],
     "title": "Smart Home Security System",
     "type": "product",
   },
-  Object {
+  {
     "category": "Furniture",
     "content": "# Electric Standing Desk
 
@@ -134,7 +134,7 @@ Boost your productivity with an adjustable standing desk, designed for comfort a
     "price": "$450",
     "releaseDate": "2024-07-20",
     "slug": "product-5",
-    "tags": Array [
+    "tags": [
       "desk",
       "office",
       "standing",
@@ -142,68 +142,68 @@ Boost your productivity with an adjustable standing desk, designed for comfort a
     "title": "Electric Standing Desk using Javascript",
     "type": "product",
   },
-  Object {
+  {
     "category": "Development",
     "content": "# Website Development
 
 We provide custom website development services tailored to your business needs, from small businesses to large enterprises.",
     "priceRange": "$1000 - $5000",
     "slug": "service-1",
-    "tags": Array [
+    "tags": [
       "web development",
       "services",
     ],
     "title": "Website Development",
     "type": "service",
   },
-  Object {
+  {
     "category": "Marketing",
     "content": "",
     "priceRange": "$800 - $4000",
     "slug": "service-2",
-    "tags": Array [
+    "tags": [
       "digital marketing",
       "services",
     ],
     "title": "Digital Marketing Strategy",
     "type": "service",
   },
-  Object {
+  {
     "category": "SEO",
     "content": "# SEO Optimization
 
 Optimize your website for search engines and improve your ranking with our proven SEO services.",
     "priceRange": "$500 - $2000",
     "slug": "service-3",
-    "tags": Array [
+    "tags": [
       "SEO",
       "services",
     ],
     "title": "SEO Optimization using Javascript",
     "type": "service",
   },
-  Object {
+  {
     "category": "Development",
     "content": "# Mobile App Development
 
 We create powerful and user-friendly mobile applications to help you reach your audience on iOS and Android.",
     "priceRange": "$3000 - $10000",
     "slug": "service-4",
-    "tags": Array [
+    "tags": [
       "mobile development",
       "services",
     ],
     "title": "Mobile App Development",
     "type": "service",
   },
-  Object {
+  {
     "category": "Hosting",
     "content": "# Cloud Hosting Solutions
 
 Reliable and scalable cloud hosting solutions designed to meet the demands of your growing business.",
     "priceRange": "$150 - $1000/month",
     "slug": "service-5",
-    "tags": Array [
+    "tags": [
       "cloud hosting",
       "services",
     ],
@@ -213,46 +213,23 @@ Reliable and scalable cloud hosting solutions designed to meet the demands of yo
 ]
 `;
 
-exports[`listContent Tests Check sorting by date 1`] = `Array []`;
-
-exports[`listContent Tests Filter content by author 1`] = `
-Array [
-  Object {
-    "author": "Alice Smith",
-    "content": "# JavaScript Closures
-
-Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
-    "date": "2024-08-12",
-    "slug": "blog-1",
-    "tags": Array [
-      "JavaScript",
-      "Programming",
-    ],
-    "title": "Understanding JavaScript Closures",
-    "type": "blog",
-  },
-]
-`;
-
-exports[`listContent Tests Filter content by date range 1`] = `Array []`;
-
 exports[`listContent Tests Filter content by keyword in title 1`] = `
-Array [
-  Object {
+[
+  {
     "author": "Alice Smith",
     "content": "# JavaScript Closures
 
 Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
     "date": "2024-08-12",
     "slug": "blog-1",
-    "tags": Array [
+    "tags": [
       "JavaScript",
       "Programming",
     ],
     "title": "Understanding JavaScript Closures",
     "type": "blog",
   },
-  Object {
+  {
     "category": "Furniture",
     "content": "# Electric Standing Desk
 
@@ -260,7 +237,7 @@ Boost your productivity with an adjustable standing desk, designed for comfort a
     "price": "$450",
     "releaseDate": "2024-07-20",
     "slug": "product-5",
-    "tags": Array [
+    "tags": [
       "desk",
       "office",
       "standing",
@@ -268,14 +245,14 @@ Boost your productivity with an adjustable standing desk, designed for comfort a
     "title": "Electric Standing Desk using Javascript",
     "type": "product",
   },
-  Object {
+  {
     "category": "SEO",
     "content": "# SEO Optimization
 
 Optimize your website for search engines and improve your ranking with our proven SEO services.",
     "priceRange": "$500 - $2000",
     "slug": "service-3",
-    "tags": Array [
+    "tags": [
       "SEO",
       "services",
     ],
@@ -286,15 +263,34 @@ Optimize your website for search engines and improve your ranking with our prove
 `;
 
 exports[`listContent Tests Filter content by keywords 1`] = `
-Array [
-  Object {
+[
+  {
     "author": "Alice Smith",
     "content": "# JavaScript Closures
 
 Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
     "date": "2024-08-12",
     "slug": "blog-1",
-    "tags": Array [
+    "tags": [
+      "JavaScript",
+      "Programming",
+    ],
+    "title": "Understanding JavaScript Closures",
+    "type": "blog",
+  },
+]
+`;
+
+exports[`listContent Tests Filter content by meta key 1`] = `
+[
+  {
+    "author": "Alice Smith",
+    "content": "# JavaScript Closures
+
+Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
+    "date": "2024-08-12",
+    "slug": "blog-1",
+    "tags": [
       "JavaScript",
       "Programming",
     ],
@@ -305,64 +301,64 @@ Closures are an important concept in JavaScript, enabling powerful patterns for 
 `;
 
 exports[`listContent Tests Filter content by type 1`] = `
-Array [
-  Object {
+[
+  {
     "author": "Alice Smith",
     "content": "# JavaScript Closures
 
 Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
     "date": "2024-08-12",
     "slug": "blog-1",
-    "tags": Array [
+    "tags": [
       "JavaScript",
       "Programming",
     ],
     "title": "Understanding JavaScript Closures",
     "type": "blog",
   },
-  Object {
+  {
     "author": "John Doe",
     "content": "# AI in Healthcare
 
 Artificial intelligence is transforming the healthcare industry by improving diagnosis, treatment, and patient care.",
     "date": "2024-08-18",
     "slug": "blog-2",
-    "tags": Array [
+    "tags": [
       "AI",
       "Healthcare",
     ],
     "title": "The Future of AI in Healthcare",
     "type": "blog",
   },
-  Object {
+  {
     "author": "Jane Doe",
     "content": "# Mastering CSS
 
 CSS is a crucial part of web development, and improving your skills can significantly enhance your front-end development.",
     "date": "2024-09-01",
     "slug": "blog-3",
-    "tags": Array [
+    "tags": [
       "CSS",
       "Web Development",
     ],
     "title": "How to Improve Your CSS Skills",
     "type": "blog",
   },
-  Object {
+  {
     "content": "# Python for Data Science
 
 Python is the go-to programming language for data science due to its simplicity and the vast array of libraries available.",
     "slug": "blog-4",
     "type": "blog",
   },
-  Object {
+  {
     "author": "Sarah Brown",
     "content": "# Productivity Tips
 
 This content includes special characters: @#$%^&().",
     "date": "2024-09-05",
     "slug": "blog-5",
-    "tags": Array [
+    "tags": [
       "Productivity",
       "Developers",
     ],
@@ -372,9 +368,9 @@ This content includes special characters: @#$%^&().",
 ]
 `;
 
-exports[`listContent Tests Filter content by type and keyword 1`] = `
-Array [
-  Object {
+exports[`listContent Tests Filter content by type and meta 1`] = `
+[
+  {
     "category": "Audio",
     "content": "# Noise-Canceling Headphones
 
@@ -382,7 +378,7 @@ Experience immersive sound with our noise-canceling headphones, ideal for music 
     "price": "$199",
     "releaseDate": "2024-08-01",
     "slug": "product-3",
-    "tags": Array [
+    "tags": [
       "headphones",
       "audio",
     ],
@@ -392,53 +388,103 @@ Experience immersive sound with our noise-canceling headphones, ideal for music 
 ]
 `;
 
-exports[`listContent Tests Filter content matching in title 1`] = `Array []`;
+exports[`listContent Tests Filter content matching in title 1`] = `[]`;
 
-exports[`listContent Tests return title of all slugs 1`] = `
-Array [
-  Object {
-    "title": "Understanding JavaScript Closures",
-  },
-  Object {
-    "title": "The Future of AI in Healthcare",
-  },
-  Object {
-    "title": "How to Improve Your CSS Skills",
-  },
-  Object {
-    "title": undefined,
-  },
-  Object {
-    "title": "Special @#$% Characters!",
-  },
-  Object {
-    "title": "SuperFast Laptop",
-  },
-  Object {
-    "title": "Eco-Friendly Water Bottle",
-  },
-  Object {
-    "title": "Noise-Canceling Headphones",
-  },
-  Object {
-    "title": "Smart Home Security System",
-  },
-  Object {
-    "title": "Electric Standing Desk using Javascript",
-  },
-  Object {
+exports[`listContent Tests Sort 1`] = `
+[
+  {
     "title": "Website Development",
   },
-  Object {
+  {
     "title": "Digital Marketing Strategy",
   },
-  Object {
+  {
     "title": "SEO Optimization using Javascript",
   },
-  Object {
+  {
     "title": "Mobile App Development",
   },
-  Object {
+  {
+    "title": "Cloud Hosting Solutions",
+  },
+  {
+    "title": "SuperFast Laptop",
+  },
+  {
+    "title": "Eco-Friendly Water Bottle",
+  },
+  {
+    "title": "Noise-Canceling Headphones",
+  },
+  {
+    "title": "Smart Home Security System",
+  },
+  {
+    "title": "Electric Standing Desk using Javascript",
+  },
+  {
+    "title": "Understanding JavaScript Closures",
+  },
+  {
+    "title": "The Future of AI in Healthcare",
+  },
+  {
+    "title": "How to Improve Your CSS Skills",
+  },
+  {
+    "title": undefined,
+  },
+  {
+    "title": "Special @#$% Characters!",
+  },
+]
+`;
+
+exports[`listContent Tests return title of all slugs 1`] = `
+[
+  {
+    "title": "Understanding JavaScript Closures",
+  },
+  {
+    "title": "The Future of AI in Healthcare",
+  },
+  {
+    "title": "How to Improve Your CSS Skills",
+  },
+  {
+    "title": undefined,
+  },
+  {
+    "title": "Special @#$% Characters!",
+  },
+  {
+    "title": "SuperFast Laptop",
+  },
+  {
+    "title": "Eco-Friendly Water Bottle",
+  },
+  {
+    "title": "Noise-Canceling Headphones",
+  },
+  {
+    "title": "Smart Home Security System",
+  },
+  {
+    "title": "Electric Standing Desk using Javascript",
+  },
+  {
+    "title": "Website Development",
+  },
+  {
+    "title": "Digital Marketing Strategy",
+  },
+  {
+    "title": "SEO Optimization using Javascript",
+  },
+  {
+    "title": "Mobile App Development",
+  },
+  {
     "title": "Cloud Hosting Solutions",
   },
 ]

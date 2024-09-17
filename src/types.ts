@@ -65,5 +65,5 @@ export type ListContent = (
     content?: ContentExpression;
   } & Record<string, AnyExpression>,
   attributes?: AttributeFilter,
-  customFilterProviders?: Record<string, FilterProvider>
+  sort?: (a: Content, b: Content) => number
 ) => Promise<Partial<Content>[]>;

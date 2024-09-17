@@ -1,12 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Check only metadata is returned when there is no content 1`] = `
-Object {
+{
   "category": "Marketing",
   "content": "",
   "priceRange": "$800 - $4000",
   "slug": "service-2",
-  "tags": Array [
+  "tags": [
     "digital marketing",
     "services",
   ],
@@ -16,7 +16,7 @@ Object {
 `;
 
 exports[`return full content when no attributes specified 1`] = `
-Object {
+{
   "category": "Electronics",
   "content": "# SuperFast Laptop
 
@@ -24,7 +24,7 @@ A high-performance laptop designed for professionals who need speed and reliabil
   "price": "$999",
   "releaseDate": "2024-07-10",
   "slug": "product-1",
-  "tags": Array [
+  "tags": [
     "laptop",
     "electronics",
     "featured",

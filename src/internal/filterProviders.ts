@@ -13,7 +13,6 @@ export const EndsWithFilterProvider: FilterProvider = (data, arg) => {
 };
 
 export const ContainsFilterProvider: FilterProvider = (data, arg) => {
-  console.log(data, arg);
   return (
     typeof data == "string" &&
     data.toLocaleLowerCase().includes((arg + "").toLocaleLowerCase())

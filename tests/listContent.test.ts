@@ -37,15 +37,6 @@ describe("listContent Tests", () => {
     expect(contents).toMatchSnapshot();
   });
 
-  test("Filter content by date range", async () => {
-    Config.setRootDir(commonRootDir);
-    const contents = await listContent({
-      ReleasedateFrom: "2024-06-01",
-      ReleasedateTo: "2024-08-31"
-    });
-    expect(contents).toMatchSnapshot();
-  });
-
   test("Filter content by keywords", async () => {
     Config.setRootDir(commonRootDir);
     const contents = await listContent({
@@ -53,7 +44,7 @@ describe("listContent Tests", () => {
     });
     expect(contents).toMatchSnapshot();
   });
-  test("Filter content by author", async () => {
+  test("Filter content by meta key", async () => {
     Config.setRootDir(commonRootDir);
     const contents = await listContent({ author: "Alice Smith" });
     expect(contents).toMatchSnapshot();
@@ -63,17 +54,22 @@ describe("listContent Tests", () => {
     const contents = await listContent({});
     expect(contents).toMatchSnapshot();
   });
-  test("Check sorting by date", async () => {
-    Config.setRootDir(commonRootDir);
-    const contents = await listContent({ sortBy: "date", order: "asc" });
-    expect(contents).toMatchSnapshot();
-  });
-  test("Filter content by type and keyword", async () => {
+
+  test("Filter content by type and meta", async () => {
     Config.setRootDir(commonRootDir);
     const contents = await listContent({
       type: "product",
       title: "Noise-Canceling Headphones"
     });
     expect(contents).toMatchSnapshot();
+  });
+
+  test("Sort", async () => {
+    Config.setRootDir(commonRootDir);
+    await expect(
+      listContent({}, ["title"], (a, b) => {
+        return b.type.localeCompare(a.type);
+      })
+    ).resolves.toMatchSnapshot();
   });
 });

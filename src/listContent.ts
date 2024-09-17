@@ -7,7 +7,8 @@ import { attributeFilter } from "./internal/attributeFilter";
 
 export const listContent: ListContent = async (
   filters = {},
-  attributes = []
+  attributes = [],
+  sort
 ) => {
   const rootDir = Config.getRootDir();
 
@@ -51,6 +52,11 @@ export const listContent: ListContent = async (
   const filteredContents = contentPredicate
     ? allContents.filter(contentPredicate)
     : allContents;
+
+  // apply sort if present
+  if (sort) {
+    filteredContents.sort(sort);
+  }
 
   // level 3, filter attributes
   const partialContents = filteredContents.map(content =>

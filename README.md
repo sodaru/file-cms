@@ -108,14 +108,16 @@ console.log(content);
 import { Config, listContent } from 'file-cms';
 Config.setRootDir('/rootDir'); // set the root dir to path where the content is stored
 
-const contents = listContent({
-  type: 'blog',
-  meta: {
-    keywords: {
+const contents = listContent(
+  { // Content filters
+    type: 'blog',
+    tags: {
       has: "serverless"
     }
-  }
-}); // list all contents of type blog and containing serverless keyword in the meta section
+  },
+  ["type", "slug", "title"], // select attributes
+  sortCompareFn // sort compare function
+); // list all contents of type blog and containing serverless keyword in the meta section
 console.log(contents);
 ```
 
