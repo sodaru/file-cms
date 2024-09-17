@@ -24,6 +24,6 @@ const readContentFile = async (rootDir: string, type: string, slug: string) => {
   try {
     return await readFile(path.join(rootDir, type, slug + ".md"), "utf8");
   } catch (e) {
-    throw new NotFoundError(type, slug, e);
+    throw new NotFoundError(rootDir, type, slug, e);
   }
 };
