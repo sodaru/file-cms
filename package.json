@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "clean": "npx rimraf dist",
-    "prettier": "npx prettier --check --ignore-unknown ./**/*",
+    "prettier": "npx prettier --check --ignore-unknown --no-error-on-unmatched-pattern ./**/*",
     "eslint": "npx eslint ./ --no-error-on-unmatched-pattern",
     "tsc": "npx tsc",
     "tsc-cjs": "npx tsc --project tsconfig.cjs.json",
