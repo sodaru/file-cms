@@ -1,6 +1,6 @@
 {
   "name": "file-cms",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "File based Content Management System, easy to use with content stored in native file system",
   "main": "dist/cjs/index.js",
   "module": "dist/index.js",
