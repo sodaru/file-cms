@@ -1,15 +1,45 @@
 export type AttributeFilter = string[];
 
+export type SeoTag = {
+  tag: string;
+  content: string | null;
+  attributes: Record<string, string>;
+};
+
 export type Content = {
   type: string;
   slug: string;
   content: string;
+  _seoMetaTags?: SeoTag[];
 } & Record<string, unknown>;
+
+export type SeoAttribute =
+  | string
+  | {
+      key?: string;
+      default?: string;
+    };
+
+export type SeoSettings =
+  | true
+  | ({
+      title?: SeoAttribute;
+      description?: SeoAttribute;
+      image?: SeoAttribute;
+      imageWidth?: SeoAttribute;
+      imageHeight?: SeoAttribute;
+      locale?: SeoAttribute;
+      siteName?: SeoAttribute;
+      seoType?: SeoAttribute;
+      twitterCard?: SeoAttribute;
+      twitterSite?: SeoAttribute;
+    } & Record<string, SeoAttribute>);
 
 export type GetContent = (
   type: string,
   slug: string,
-  attributes?: AttributeFilter
+  attributes?: AttributeFilter,
+  seo?: SeoSettings
 ) => Promise<Partial<Content>>;
 
 export type FilterProvider = (data: unknown, arg: unknown) => boolean;

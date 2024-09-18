@@ -15,6 +15,142 @@ exports[`Check only metadata is returned when there is no content 1`] = `
 }
 `;
 
+exports[`Get content With Seo with default value for non existing seo key 1`] = `
+{
+  "_seoMetaTags": [
+    {
+      "attributes": {},
+      "content": "Understanding JavaScript Closures",
+      "tag": "title",
+    },
+    {
+      "attributes": {
+        "content": "Understanding JavaScript Closures",
+        "property": "og:title",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "Understanding JavaScript Closures",
+        "name": "twitter:title",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "en",
+        "property": "og:locale",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "website",
+        "property": "og:type",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "summary_large_image",
+        "name": "twitter:card",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "@xyz",
+        "name": "twitter:site",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+  ],
+  "author": "Alice Smith",
+  "content": "# JavaScript Closures
+
+Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
+  "date": "2024-08-12",
+  "slug": "blog-1",
+  "tags": [
+    "JavaScript",
+    "Programming",
+  ],
+  "title": "Understanding JavaScript Closures",
+  "type": "blog",
+}
+`;
+
+exports[`Get content With Seo with seo = true 1`] = `
+{
+  "_seoMetaTags": [
+    {
+      "attributes": {},
+      "content": "Understanding JavaScript Closures",
+      "tag": "title",
+    },
+    {
+      "attributes": {
+        "content": "Understanding JavaScript Closures",
+        "property": "og:title",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "Understanding JavaScript Closures",
+        "name": "twitter:title",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "en",
+        "property": "og:locale",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "website",
+        "property": "og:type",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+    {
+      "attributes": {
+        "content": "summary_large_image",
+        "name": "twitter:card",
+      },
+      "content": null,
+      "tag": "meta",
+    },
+  ],
+  "author": "Alice Smith",
+  "content": "# JavaScript Closures
+
+Closures are an important concept in JavaScript, enabling powerful patterns for scoping and memory management.",
+  "date": "2024-08-12",
+  "slug": "blog-1",
+  "tags": [
+    "JavaScript",
+    "Programming",
+  ],
+  "title": "Understanding JavaScript Closures",
+  "type": "blog",
+}
+`;
+
 exports[`return full content when no attributes specified 1`] = `
 {
   "category": "Electronics",

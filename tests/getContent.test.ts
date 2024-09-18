@@ -128,14 +128,33 @@ describe("getContent Tests", () => {
     const content = await getContent("blog", "blog-1");
     expect((content.title as string).startsWith("Understanding")).toBe(true);
   });
+
+  test("Check only metadata is returned when there is no content", async () => {
+    Config.setRootDir(commonRootDir);
+    const noContentMetadata = await getContent("service", "service-2");
+    expect(noContentMetadata).toMatchSnapshot();
+  });
+  test("return full content when no attributes specified", async () => {
+    Config.setRootDir(commonRootDir);
+    const fullContent = await getContent("product", "product-1");
+    expect(fullContent).toMatchSnapshot();
+  });
 });
-test("Check only metadata is returned when there is no content", async () => {
-  Config.setRootDir(commonRootDir);
-  const noContentMetadata = await getContent("service", "service-2");
-  expect(noContentMetadata).toMatchSnapshot();
-});
-test("return full content when no attributes specified", async () => {
-  Config.setRootDir(commonRootDir);
-  const fullContent = await getContent("product", "product-1");
-  expect(fullContent).toMatchSnapshot();
+
+describe("Get content With Seo", () => {
+  test("with seo = true", async () => {
+    Config.setRootDir(commonRootDir);
+    await expect(
+      getContent("blog", "blog-1", undefined, true)
+    ).resolves.toMatchSnapshot();
+  });
+
+  test("with default value for non existing seo key", async () => {
+    Config.setRootDir(commonRootDir);
+    await expect(
+      getContent("blog", "blog-1", undefined, {
+        twitterSite: { default: "@xyz" }
+      })
+    ).resolves.toMatchSnapshot();
+  });
 });
