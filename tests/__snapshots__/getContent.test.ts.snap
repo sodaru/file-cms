@@ -1,20 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Check only metadata is returned when there is no content 1`] = `
-{
-  "category": "Marketing",
-  "content": "",
-  "priceRange": "$800 - $4000",
-  "slug": "service-2",
-  "tags": [
-    "digital marketing",
-    "services",
-  ],
-  "title": "Digital Marketing Strategy",
-  "type": "service",
-}
-`;
-
 exports[`Get content With Seo with default value for non existing seo key 1`] = `
 {
   "_seoMetaTags": [
@@ -151,7 +136,22 @@ Closures are an important concept in JavaScript, enabling powerful patterns for 
 }
 `;
 
-exports[`return full content when no attributes specified 1`] = `
+exports[`getContent Tests Check only metadata is returned when there is no content 1`] = `
+{
+  "category": "Marketing",
+  "content": "",
+  "priceRange": "$800 - $4000",
+  "slug": "service-2",
+  "tags": [
+    "digital marketing",
+    "services",
+  ],
+  "title": "Digital Marketing Strategy",
+  "type": "service",
+}
+`;
+
+exports[`getContent Tests return full content when no attributes specified 1`] = `
 {
   "category": "Electronics",
   "content": "# SuperFast Laptop

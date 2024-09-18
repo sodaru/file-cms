@@ -5,7 +5,7 @@ export class NotFoundError extends Error {
   private _cause: Error;
   constructor(rootDir: string, type: string, slug: string, cause: Error) {
     super(
-      `Content Not Found, rootDir = ${rootDir}, type = ${type},  slug = ${slug}`
+      `Content Not Found, rootDir = ${rootDir}, type = ${type}, slug = ${slug}`
     );
     this._rootDir = rootDir;
     this._type = type;

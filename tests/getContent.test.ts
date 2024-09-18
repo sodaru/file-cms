@@ -49,7 +49,9 @@ describe("getContent Tests", () => {
   test("Handle non-existent type", async () => {
     Config.setRootDir(commonRootDir);
     await expect(getContent("files", "blog-1")).rejects.toThrow(
-      "Content Not Found, type = files, slug = blog-1"
+      "Content Not Found, rootDir = " +
+        commonRootDir +
+        ", type = files, slug = blog-1"
     );
   });
   test("Handle non-existent slug", async () => {

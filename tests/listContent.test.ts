@@ -23,6 +23,7 @@ describe("listContent Tests", () => {
   test("return title of all slugs", async () => {
     Config.setRootDir(commonRootDir);
     const slug = await listContent({}, ["title"]);
+    slug.sort((a, b) => (a.title as string)?.localeCompare(b.title as string));
     expect(slug).toMatchSnapshot();
   });
   test("Filter content matching in title", async () => {

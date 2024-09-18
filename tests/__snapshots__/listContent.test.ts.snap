@@ -443,16 +443,31 @@ exports[`listContent Tests Sort 1`] = `
 exports[`listContent Tests return title of all slugs 1`] = `
 [
   {
-    "title": "Understanding JavaScript Closures",
+    "title": "Cloud Hosting Solutions",
   },
   {
-    "title": "The Future of AI in Healthcare",
+    "title": "Digital Marketing Strategy",
+  },
+  {
+    "title": "Eco-Friendly Water Bottle",
+  },
+  {
+    "title": "Electric Standing Desk using Javascript",
   },
   {
     "title": "How to Improve Your CSS Skills",
   },
   {
-    "title": undefined,
+    "title": "Mobile App Development",
+  },
+  {
+    "title": "Noise-Canceling Headphones",
+  },
+  {
+    "title": "SEO Optimization using Javascript",
+  },
+  {
+    "title": "Smart Home Security System",
   },
   {
     "title": "Special @#$% Characters!",
@@ -461,31 +476,16 @@ exports[`listContent Tests return title of all slugs 1`] = `
     "title": "SuperFast Laptop",
   },
   {
-    "title": "Eco-Friendly Water Bottle",
+    "title": "The Future of AI in Healthcare",
   },
   {
-    "title": "Noise-Canceling Headphones",
+    "title": "Understanding JavaScript Closures",
   },
   {
-    "title": "Smart Home Security System",
-  },
-  {
-    "title": "Electric Standing Desk using Javascript",
+    "title": undefined,
   },
   {
     "title": "Website Development",
-  },
-  {
-    "title": "Digital Marketing Strategy",
-  },
-  {
-    "title": "SEO Optimization using Javascript",
-  },
-  {
-    "title": "Mobile App Development",
-  },
-  {
-    "title": "Cloud Hosting Solutions",
   },
 ]
 `;
