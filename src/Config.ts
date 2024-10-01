@@ -16,6 +16,8 @@ export class Config {
   static getRootDir() {
     if (typeof this.rootDir == "string") {
       return this.rootDir;
+    } else if (typeof process.env.FILE_CMS_ROOT_DIR == "string") {
+      return process.env.FILE_CMS_ROOT_DIR;
     }
     throw new NoRootDirSetError();
   }
