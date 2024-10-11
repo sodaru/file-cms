@@ -3,3 +3,4 @@ export * from "./Config";
 export * from "./getContent";
 export * from "./listContent";
 export * from "./getFile";
+export * from "./copyDir";
