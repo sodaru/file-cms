@@ -12,7 +12,7 @@ export const parseContent = (
   if (content.startsWith("```YAML")) {
     const metaEndsAt = content.indexOf("\n```", 7); // length of ```YAML == 7
     if (metaEndsAt > 7) {
-      const metaData = content.substring(7, metaEndsAt);
+      const metaData = content.substring(7, metaEndsAt).trim();
       content = content.substring(metaEndsAt + 4).trim();
       meta = yaml.parse(metaData);
     }
